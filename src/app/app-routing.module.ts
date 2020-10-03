@@ -1,7 +1,25 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {HomeComponent} from './component/home/home.component';
+import {PostsListComponent} from './component/posts-list/posts-list.component';
+import {AboutComponent} from './component/about/about.component';
+import {PageNotFoundComponent} from './component/page-not-found/page-not-found.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    component: HomeComponent
+  },
+  {path: 'posts',
+  component: PostsListComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent
+  },
+  { path: '**',
+    component: PageNotFoundComponent }  // Wildcard route for a 404 page
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
